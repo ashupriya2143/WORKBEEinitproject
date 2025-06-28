@@ -1,15 +1,20 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Clock, Shield, Users, Star, CheckCircle, ArrowRight, Hexagon, Target, Award } from 'lucide-react'
+import { Clock, Shield, Users, Star, CheckCircle, ArrowRight, Target, Award, MapPin, Zap, CreditCard } from 'lucide-react'
 
 const Home: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-slate-800 to-slate-900 text-white pt-20">
+      <section className="bg-gradient-to-r from-slate-800 to-slate-900 text-white pt-20 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <div className="z-10 relative">
+              {/* Launching Soon Badge */}
+              <div className="inline-flex items-center bg-orange-100 text-orange-800 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                🚀 Launching Soon in India
+              </div>
+              
               <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
                 Find Workers
                 <span className="text-yellow-500 block">in 5 Minutes</span>
@@ -17,6 +22,23 @@ const Home: React.FC = () => {
               <p className="text-xl mb-8 text-gray-300">
                 Transform your business with India's fastest on-demand labor marketplace. Connect with verified workers instantly, or find flexible work opportunities near you.
               </p>
+              
+              {/* Stats */}
+              <div className="grid grid-cols-3 gap-6 mb-8">
+                <div className="text-center">
+                  <div className="text-2xl md:text-3xl font-bold text-yellow-500">≤5 Min</div>
+                  <div className="text-sm text-gray-400">Average Job Fill Time</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl md:text-3xl font-bold text-yellow-500">24/7</div>
+                  <div className="text-sm text-gray-400">Platform Availability</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl md:text-3xl font-bold text-yellow-500">100%</div>
+                  <div className="text-sm text-gray-400">Verified Workers</div>
+                </div>
+              </div>
+              
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   to="/register-business"
@@ -32,34 +54,107 @@ const Home: React.FC = () => {
                 </Link>
               </div>
             </div>
+            
+            {/* Hero Image */}
             <div className="relative">
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
-                <div className="grid grid-cols-2 gap-6">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-yellow-500">≤5 Min</div>
-                    <div className="text-sm text-gray-300">Average Job Fill Time</div>
+              <div className="relative z-10">
+                <img 
+                  src="https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=800" 
+                  alt="Store workers and business owners connecting through WorkBee platform"
+                  className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
+                />
+                {/* Floating cards */}
+                <div className="absolute -top-4 -left-4 bg-white rounded-xl p-4 shadow-lg">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                      <CheckCircle className="h-6 w-6 text-green-600" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">Worker Found!</p>
+                      <p className="text-sm text-gray-600">Cashier • 2.3 km away</p>
+                    </div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-yellow-500">24/7</div>
-                    <div className="text-sm text-gray-300">Platform Availability</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-yellow-500">100%</div>
-                    <div className="text-sm text-gray-300">Verified Workers</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-yellow-500">Safe</div>
-                    <div className="text-sm text-gray-300">& Secure</div>
+                </div>
+                
+                <div className="absolute -bottom-4 -right-4 bg-white rounded-xl p-4 shadow-lg">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center">
+                      <Star className="h-6 w-6 text-yellow-600" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900">4.9 Rating</p>
+                      <p className="text-sm text-gray-600">156 jobs completed</p>
+                    </div>
                   </div>
                 </div>
               </div>
+              
+              {/* Background decoration */}
+              <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 to-orange-400/20 rounded-2xl transform rotate-3"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-400/10 to-green-400/10 rounded-2xl transform -rotate-3"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Why Choose Us?
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Built for India's unique needs with cutting-edge technology and local insights
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center group">
+              <div className="bg-blue-100 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-200 transition-colors">
+                <Zap className="h-8 w-8 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Lightning Fast</h3>
+              <p className="text-gray-600">
+                Jobs filled in 5 minutes or less with our smart matching system
+              </p>
+            </div>
+
+            <div className="text-center group">
+              <div className="bg-green-100 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-green-200 transition-colors">
+                <Shield className="h-8 w-8 text-green-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Trust & Safety</h3>
+              <p className="text-gray-600">
+                Aadhaar-KYC, background-checked & rated by peers
+              </p>
+            </div>
+
+            <div className="text-center group">
+              <div className="bg-orange-100 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-orange-200 transition-colors">
+                <MapPin className="h-8 w-8 text-orange-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Work From Your City</h3>
+              <p className="text-gray-600">
+                No long drives, no extra allowances. Find work opportunities near you
+              </p>
+            </div>
+
+            <div className="text-center group">
+              <div className="bg-purple-100 w-16 h-16 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:bg-purple-200 transition-colors">
+                <CreditCard className="h-8 w-8 text-purple-600" />
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Instant Payments</h3>
+              <p className="text-gray-600">
+                No more cash hassles—instant UPI payout after shift
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-gray-100">
+      {/*<section className="py-20 bg-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -102,7 +197,7 @@ const Home: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section>*/}
 
       {/* How It Works */}
       <section className="py-20">
