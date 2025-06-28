@@ -187,20 +187,29 @@ const RegisterWorker: React.FC = () => {
   if (success) {
     return (
       <div className="min-h-screen bg-gray-100 pt-20 flex items-center justify-center">
-        <div className="max-w-md w-full bg-white rounded-lg shadow-lg p-8 text-center">
-          <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <CheckCircle className="h-8 w-8 text-green-600" />
+        <div className="max-w-lg w-full bg-white rounded-2xl shadow-lg p-8 text-center mx-4">
+          <div className="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+            <CheckCircle className="h-10 w-10 text-green-600" />
           </div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Welcome to WorkBee!</h2>
-          <p className="text-gray-600 mb-6">
-            Your registration is successful. Our team will verify your details and activate your profile within 24 hours. You'll start receiving job matches from stores and shops soon!
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">🎉 Welcome to WorkBee!</h2>
+          <p className="text-gray-600 mb-6 text-lg">
+            Your worker registration is successful! You're now part of India's fastest-growing workforce community.
           </p>
-          <p className="text-sm text-green-600 font-medium mb-4">
-            Start earning with flexible work opportunities near you.
+          <div className="bg-orange-50 border border-orange-200 rounded-lg p-4 mb-6">
+            <p className="text-orange-800 font-medium mb-2">What's Next?</p>
+            <ul className="text-orange-700 text-sm space-y-1 text-left">
+              <li>• Our team will verify your details within 24 hours</li>
+              <li>• You'll receive job notifications once verified</li>
+              <li>• Start earning with flexible work opportunities</li>
+              <li>• Build your reputation with ratings and reviews</li>
+            </ul>
+          </div>
+          <p className="text-green-600 font-medium mb-6">
+            🚀 Start earning with stores and shops near you!
           </p>
           <Link
             to="/login"
-            className="text-yellow-600 hover:text-orange-600 font-medium"
+            className="bg-orange-600 text-white px-8 py-3 rounded-lg hover:bg-orange-700 font-semibold transition-colors inline-block"
           >
             Sign In to Your Account
           </Link>
